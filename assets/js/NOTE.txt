@@ -1,0 +1,5 @@
+When using this repository, first create your own <myname.js> file.
+
+This is to reduce the potential for merge conflicts
+
+We will consolidate the JS into one file later.
