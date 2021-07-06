@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    text-align: center;
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+.card-body {
+    border: solid black;
+    border-radius: 3px;
+    background-color: cornflowerblue;
+    margin: auto;
+    margin-top: 15%;
+    width: 60%;
+}
+
+h5 {
+    text-align: center;
+}
+
+input{
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn1 {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+}
