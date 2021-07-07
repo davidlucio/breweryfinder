@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Brewery Finder</h1>
+    </header>
+
+    <div>
+        <main>
+            <div>
+                <form>
+                    <div class="card-body">
+                        <h5 class="card-title">Search for a brewery near you</h5>
+                        <input id="inputField" class="input-group" placeholder="search!">
+                        <select id="selectOpt">
+                            <option selected>Filter</option>
+                            <option value="1">City</option>
+                            <option value="2">Distance</option>
+                            <option value="3">Name</option>
+                        </select>
+                        <button class="btn1" id="btn">Submit</button>    
+                    </div>
+                </form>
+            </div>
+        </main>
+    
+</body>
+<script src="leaflet-geoip.js"></script>
+<script src="assets/js/script.js"></script>
+</html>
