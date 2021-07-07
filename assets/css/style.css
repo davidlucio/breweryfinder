@@ -40,3 +40,14 @@ select {
     border-radius: 10px;
     font-size: 20px;
 }
+
+
+.card-body1 {
+    border: solid black;
+    border-radius: 3px;
+    background-color: cornflowerblue;
+    margin: auto;
+    margin-top: 15%;
+    width: 60%;
+    height: 180px;
+}
