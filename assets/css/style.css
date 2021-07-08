@@ -11,43 +11,26 @@
 
 header{
     text-align: center;
-    background-color: cornflowerblue;
-    padding: 10px;
-}
-
-.card-body {
-    border: solid black;
-    border-radius: 3px;
-    background-color: cornflowerblue;
-    margin: auto;
-    margin-top: 15%;
-    width: 60%;
-}
-
-h5 {
-    text-align: center;
+    font-size: large;
+    background-color: skyblue;
+    padding: 20px;
 }
 
 input{
     padding: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-radius: 5px;
 }
 
-select {
+.footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    height: 60px;
+    background-color: skyblue;
 }
 
-.btn1 {
-    width: 100%;
-    border-radius: 10px;
-    font-size: 20px;
-}
-
-.card-body1 {
+.card-body {
     border: solid black;
     border-radius: 3px;
     background-color: cornflowerblue;
