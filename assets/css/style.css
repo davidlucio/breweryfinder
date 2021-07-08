@@ -1,8 +1,12 @@
-/** Styling - Lewis **/
-
 *{
     padding: 0;
     margin: 0;
+}
+
+/* map size */
+#breweryMap {
+    height: 400px;
+    width: 400px;
 }
 
 header{
@@ -43,8 +47,7 @@ select {
     font-size: 20px;
 }
 
-
-.card-body {
+.card-body1 {
     border: solid black;
     border-radius: 3px;
     background-color: cornflowerblue;
@@ -52,38 +55,4 @@ select {
     margin-top: 15%;
     width: 60%;
     height: 180px;
-    margin-bottom: 20px;
-}
-
-#brewerycard{
-
-    display: block;
-    width: 50vw;
-    min-width: 500px;
-    min-height: 300px;
-    margin: 0px auto;
-    padding: 20px;
-    border: 2px solid grey;
-    border-radius: 5px;
-    box-shadow: 7px ​7px 10px 0px black;
-    background: #ccddff;
-}
-
-/** Loading Icon from Font Awesome **/
-
-#brewerycard p.loading-icon{
-    display: none;
-}
-
-#brewerycard.loading{
-    display:flex;
-}
-
-#brewerycard.loading p.loading-icon{
-    display: block;
-    margin: auto;
-    text-align:center;
-    align-self: center;
-    font-size: 200%;
-    padding-bottom: 20px;
 }
