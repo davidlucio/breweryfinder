@@ -8,7 +8,7 @@
             
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/lewis-style.css">
 
         <title>Brewery Finder</title>
     </head>
@@ -19,41 +19,43 @@
         </header>
 
         <main>
-
-            <div class="box">
-                <input class="input is-rounded" type="text" placeholder="Search">
-                <div class="select is-rounded">
-                    <select>
-                      <option>Filter</option>
-                      <option>Mirco</option>
-                      <option>Nano</option>
-                      <option>Regional</option>
-                      <option>Brewpub</option>
-                      <option>Large</option>
-                      <option>Planning</option>
-                      <option>Bar</option>
-                      <option>Contract</option>
-                      <option>Proprietor</option>
-                      <option>Closed</option>
-                    </select>
-                </div>
+          <div class="box">
+            <input class="input is-rounded" type="text" placeholder="Search">
+              <div class="select is-rounded">
+                <select>
+                  <option value="1">Filter</option>
+                  <option value="2">Mirco</option>
+                  <option value="3">Nano</option>
+                  <option value="4">Regional</option>
+                  <option value="5">Brewpub</option>
+                  <option value="6">Large</option>
+                  <option value="7">Planning</option>
+                  <option value="8">Bar</option>
+                  <option value="9">Contract</option>
+                  <option value="10">Proprietor</option>
+                  <option value="11">Closed</option>
+                </select>
+              </div>
                 <button class="button is-rounded">Submit</button>
-
-              
-            </div>
-            <section id=brewerycard class="loading">
-              <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
-          </section>
-
-          <section id=bookmark-card></section>
+          </div>
+                <section id=brewerycard class="loading">
+                    <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
+                     <!-- map goes here -->
+                </section>
+                
+                <section id=bookmark-card>
+                  <p>Click to bookmark this brewery</p>
+                </section>
         </main>
-        <footer class="footer">
+        
+       <footer class="footer">
             <div class="content has-text-centered">
               <p>
                 <strong>Brewery Finder</strong> by <a href="https://github.com/davidlucio/breweryfinder">Brewery Boys</a>.
               </p>
             </div>
-          </footer>
+        </footer>
+
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <script src="leaflet-geoip.js"></script>
           <script src="assets/js/script.js"></script>    
