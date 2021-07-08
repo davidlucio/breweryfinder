@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,30 +19,44 @@
         </header>
 
         <main>
-            <div>
-                <form>
-                    <div class="card-body">
-                        <h5 class="card-title">Search for a brewery near you</h5>
-                        <input id="inputField" class="input-group" placeholder="search!">
-                        <select id="selectOpt">
-                            <option selected>Filter</option>
-                            <option value="1">City</option>
-                            <option value="2">Distance</option>
-                            <option value="3">Name</option>
-                        </select>
-                        <button class="btn1" id="btn">Submit</button>    
-                    </div>
-                </form>
 
-                <section id=brewerycard class="loading">
-                    <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
-                </section>
+            <div class="box">
+                <input class="input is-rounded" type="text" placeholder="Search">
+                <div class="select is-rounded">
+                    <select>
+                      <option>Filter</option>
+                      <option>Mirco</option>
+                      <option>Nano</option>
+                      <option>Regional</option>
+                      <option>Brewpub</option>
+                      <option>Large</option>
+                      <option>Planning</option>
+                      <option>Bar</option>
+                      <option>Contract</option>
+                      <option>Proprietor</option>
+                      <option>Closed</option>
+                    </select>
+                </div>
+                <button class="button is-rounded">Submit</button>
 
-                <section id=bookmark-card></section>
+              
             </div>
-        </main>
+            <section id=brewerycard class="loading">
+              <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
+          </section>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./assets/js/script.js"></script>
-    </body>
+          <section id=bookmark-card></section>
+        </main>
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p>
+                <strong>Brewery Finder</strong> by <a href="https://github.com/davidlucio/breweryfinder">Brewery Boys</a>.
+              </p>
+            </div>
+          </footer>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="leaflet-geoip.js"></script>
+          <script src="assets/js/script.js"></script>    
+</body>
+
 </html>
