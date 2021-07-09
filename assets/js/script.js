@@ -124,7 +124,6 @@ function getBreweryLatLong() {
 }
 
 function mapMaker(latitude, longitude) {
-    console.log('debug')
     var container = L.DomUtil.get('brewerymap');
       if(container != null){
         container._leaflet_id = null;
