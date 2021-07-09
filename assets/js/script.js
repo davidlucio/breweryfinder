@@ -4,11 +4,14 @@ var breweryCard = $('#brewerycard'),
 
 /** Page Initialize Function (AKA Push the Dominos) **/
 function init(){
-
     getBookmark();
-    locateMe();
-    
+    locateMe();   
 }
+
+$('#bookmark').click(function(){
+    var currentID = $(this).siblings('.cardcontent').attr('id');
+    addBookmark(currentID);
+});
 
 /** Geolocator - Lucio **/
 
@@ -115,7 +118,7 @@ function displayBrewery(brewery, method){
 function addBookmark(currentBreweryId){
     var existingBookmark = localStorage.getItem('breweryBookmark');
 
-    if ( existingBookmark !== null && existingBookmark != currentBreweryId ) {
+    if ( existingBookmark != currentBreweryId ) {
         localStorage.setItem('breweryBookmark', currentBreweryId);
         getBookmark();
     }
@@ -132,7 +135,24 @@ function getBookmark(){
     }
 }
 
+function fetchBookmarkData(bookmarkid){
+    var specificBreweryURL = `https://api.openbrewerydb.org/breweries/${bookmarkid}`;
+    fetch (specificBreweryURL)
+    .then(function (response){
+        if (response.status === 200){
+            response.json().then(function (data){
+                displayBrewery(data, "bookmark");
+            })
+        }
+        else if (response.status !==200){
+            console.log (`there was an error: ${response.status}`);
+        }
+        else {
+            console.log("The bookmark could not find a brewery with that ID");
+        }
+    });
+}
+
 // LET'S GOOOOOOOOOOOOOOOOOOOO!
 // (Warning: Only turn this on when we're active, otherwise we will waste our pings)
-
-// init();
+init();
