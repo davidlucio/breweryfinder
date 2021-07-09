@@ -24,6 +24,8 @@ h2{
     font-size: 200%;
     font-weight: 700;
     margin: 0px 0px 20px 0px;
+    width: 100%;
+    padding-right: 50px;
 }
 
 h3{
@@ -114,6 +116,7 @@ section p a{
     flex: none;
     height: 200px;
     width: 100%;
+    margin-top: 15px;
 }
 
 #bookmark {
@@ -162,4 +165,8 @@ section p a{
     left: 20px;
     top: 10px;
     color: white;
+}
+
+button#shuffle{
+    width: 100%;
 }

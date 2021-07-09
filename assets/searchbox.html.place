@@ -1,0 +1,16 @@
+                <input class="input is-rounded" type="text" placeholder="Search">
+                <div class="select is-rounded">
+                    <select>
+                      <option>Filter</option>
+                      <option>Mirco</option>
+                      <option>Nano</option>
+                      <option>Regional</option>
+                      <option>Brewpub</option>
+                      <option>Large</option>
+                      <option>Planning</option>
+                      <option>Bar</option>
+                      <option>Contract</option>
+                      <option>Proprietor</option>
+                      <option>Closed</option>
+                    </select>
+                </div>
