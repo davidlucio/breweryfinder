@@ -104,7 +104,7 @@ function displayBrewery(brewery, method){
 
     // TODO: pass Lat & Long to map maker
     if(method === "primary"){
-        // mapMaker( brewery.latitude, brewery.longitude );
+        mapMaker( brewery.latitude, brewery.longitude );
     }
 
 }
@@ -115,7 +115,7 @@ function displayBrewery(brewery, method){
 function addBookmark(currentBreweryId){
     var existingBookmark = localStorage.getItem('breweryBookmark');
 
-    if ( existingBookmark !== null && existingBookmark != currentBreweryId ) {
+    if ( existingBookmark != currentBreweryId ) {
         localStorage.setItem('breweryBookmark', currentBreweryId);
         getBookmark();
     }
