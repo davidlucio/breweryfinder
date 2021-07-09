@@ -107,7 +107,7 @@ function displayBrewery(brewery, method){
 
     // TODO: pass Lat & Long to map maker
     if(method === "primary"){
-        // mapMaker( brewery.latitude, brewery.longitude );
+        mapMaker( brewery.latitude, brewery.longitude );
     }
 
 }
