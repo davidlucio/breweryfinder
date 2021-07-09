@@ -1,19 +1,42 @@
+:root{
+    --dullbrown:    rgb(180, 170, 170);
+    --darkbrown:    rgb(60, 30, 0);
+    --dullblue:     rgb(110, 170, 200);
+    --darkblue:     rgb(10, 20, 150);
+}
+
 *{
     padding: 0;
     margin: 0;
 }
 
-/* map size */
-#breweryMap {
-    height: 400px;
-    width: 400px;
+body{
+    font-size: 16px;
 }
+
+h1{
+    font-size: 250%;
+    color: var(--darkblue);
+    margin: 0px;
+}
+
+h2{
+    font-size: 200%;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+}
+
+h3{
+    font-size: 150%;
+}
+
+
 
 header{
     text-align: center;
     font-size: large;
-    background-color: skyblue;
-    padding: 20px;
+    background-color: var(--dullblue);
+    padding: 10px;
 }
 
 input{
@@ -26,16 +49,83 @@ input{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
-    background-color: skyblue;
+    padding: 6px;
+    background-color: var(--dullblue);
+    color: white;
 }
 
-.card-body {
-    border: solid black;
-    border-radius: 3px;
-    background-color: cornflowerblue;
-    margin: auto;
-    margin-top: 15%;
-    width: 60%;
-    height: 180px;
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+section{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 50vw;
+    padding: 20px;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+section p{
+    margin: 0px 0px 10px 0px;
+    font-size: 120%;
+    font-weight: 500;
+}
+
+section p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#brewerycard {
+    border: 3px solid var(--darkbrown);
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 0px black;
+    background: var(--dullbrown);
+    color: white;
+    min-height: 180px;
+}
+
+#brewerycard p.loading-icon {
+    display: none;
+}
+
+#brewerycard.loading{
+    background: var(--dullblue);
+    border-color: var(--darkblue);
+}
+
+#brewerycard.loading p.loading-icon {
+    display:block;
+    align-self:center;
+    margin: 0px auto;
+    font-size: 30px;
+}
+
+/* map size */
+#brewerycard #brewerymap {
+    display: block;
+    position: relative;
+    flex: none;
+    height: 200px;
+    width: 100%;
+}
+
+#bookmark {
+    display: block;
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    /** use class 'far' for outline and 'fas' for solid **/
+}
+
+#brewerycard.loading #brewerymap,
+#brewerycard.loading #bookmark {
+    display: none;
 }
