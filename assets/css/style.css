@@ -1,89 +1,172 @@
-/** Styling - Lewis **/
+:root{
+    --dullbrown:    rgb(180, 170, 170);
+    --darkbrown:    rgb(60, 30, 0);
+    --dullblue:     rgb(110, 170, 200);
+    --darkblue:     rgb(10, 20, 150);
+}
 
 *{
     padding: 0;
     margin: 0;
 }
 
+body{
+    font-size: 16px;
+}
+
+h1{
+    font-size: 250%;
+    color: var(--darkblue);
+    margin: 0px;
+}
+
+h2{
+    font-size: 200%;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+    padding-right: 50px;
+}
+
+h3{
+    font-size: 150%;
+}
+
+
+
 header{
     text-align: center;
-    background-color: cornflowerblue;
+    font-size: large;
+    background-color: var(--dullblue);
     padding: 10px;
-}
-
-.card-body {
-    border: solid black;
-    border-radius: 3px;
-    background-color: cornflowerblue;
-    margin: auto;
-    margin-top: 15%;
-    width: 60%;
-}
-
-h5 {
-    text-align: center;
 }
 
 input{
     padding: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-radius: 5px;
 }
 
-select {
+.footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding: 6px;
+    background-color: var(--dullblue);
+    color: white;
 }
 
-.btn1 {
-    width: 100%;
-    border-radius: 10px;
-    font-size: 20px;
+.footer a{
+    color: white;
+    text-decoration: none;
 }
 
-
-.card-body {
-    border: solid black;
-    border-radius: 3px;
-    background-color: cornflowerblue;
-    margin: auto;
-    margin-top: 15%;
-    width: 60%;
-    height: 180px;
-    margin-bottom: 20px;
-}
-
-#brewerycard{
-
-    display: block;
+section{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
     width: 50vw;
-    min-width: 500px;
-    min-height: 300px;
-    margin: 0px auto;
     padding: 20px;
-    border: 2px solid grey;
-    border-radius: 5px;
-    box-shadow: 7px ​7px 10px 0px black;
-    background: #ccddff;
+    max-width: 800px;
+    margin: 10px auto;
 }
 
-/** Loading Icon from Font Awesome **/
+section p{
+    margin: 0px 0px 10px 0px;
+    font-size: 120%;
+    font-weight: 500;
+}
 
-#brewerycard p.loading-icon{
+section p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#brewerycard {
+    border: 3px solid var(--darkbrown);
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 0px black;
+    background: var(--dullbrown);
+    color: white;
+    min-height: 180px;
+}
+
+#brewerycard p.loading-icon {
     display: none;
 }
 
 #brewerycard.loading{
-    display:flex;
+    background: var(--dullblue);
+    border-color: var(--darkblue);
 }
 
-#brewerycard.loading p.loading-icon{
+#brewerycard.loading p.loading-icon {
+    display:block;
+    align-self:center;
+    margin: 0px auto;
+    font-size: 30px;
+}
+
+/* map size */
+#brewerycard #brewerymap {
     display: block;
-    margin: auto;
-    text-align:center;
-    align-self: center;
-    font-size: 200%;
-    padding-bottom: 20px;
+    position: relative;
+    flex: none;
+    height: 200px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#bookmark {
+    display: block;
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    /** use class 'far' for outline and 'fas' for solid **/
+}
+
+#brewerycard.loading #brewerymap,
+#brewerycard.loading #bookmark {
+    display: none;
+}
+
+#bookmark:hover {
+    cursor: pointer;
+    font-weight:900;
+}
+
+#bookmarkcard {
+    border: 3px solid var(--darkbrown);
+    display: none;
+    position:relative;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 0px black;
+    background: var(--dullbrown);
+    color: black;
+    font-size: 80%;
+    padding: 10px 10px 10px 80px;
+}
+
+#bookmarkcard h2,
+#bookmarkcard p{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+#bookmarkcard::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f02e";
+    font-weight: 900;
+    font-size: 50px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    color: white;
+}
+
+button#shuffle{
+    width: 100%;
 }

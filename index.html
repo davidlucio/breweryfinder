@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+
+        <script src="https://kit.fontawesome.com/3dafd30171.js" crossorigin="anonymous"></script>
 
         <title>Brewery Finder</title>
     </head>
@@ -18,30 +22,29 @@
         </header>
 
         <main>
-            <div>
-                <form>
-                    <div class="card-body">
-                        <h5 class="card-title">Search for a brewery near you</h5>
-                        <input id="inputField" class="input-group" placeholder="search!">
-                        <select id="selectOpt">
-                            <option selected>Filter</option>
-                            <option value="1">City</option>
-                            <option value="2">Distance</option>
-                            <option value="3">Name</option>
-                        </select>
-                        <button class="btn1" id="btn">Submit</button>    
-                    </div>
-                </form>
 
-                <section id=brewerycard class="loading">
-                    <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
-                </section>
+            <section id=brewerycard class="card-body loading">
+                <span id=bookmark class="far fa-bookmark"></span>
+                <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
+                <div class="cardcontent"></div>
+                <div id="brewerymap"></div>
+            </section>
+                        
+            <section class="box">
+                <button class="button is-rounded" id="shuffle">Shuffle?</button>
+            </section>
 
-                <section id=bookmark-card></section>
-            </div>
+            <section id=bookmarkcard></section>
         </main>
+      
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>&copy; <a href="https://github.com/davidlucio/breweryfinder">Brewery Boys</a>, 2021</p>
+          </div>
+        </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         <script src="./assets/js/script.js"></script>
     </body>
 </html>
