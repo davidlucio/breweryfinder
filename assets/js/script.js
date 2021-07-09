@@ -1,6 +1,6 @@
 /** Global Variables & Objects **/
-var responseCard = $('#brewery-card'),
-    bookmarkCard = $('#bookmark-card');
+var breweryCard = $('#brewerycard'),
+    bookmarkCard = $('#bookmarkcard');
 
 /** Page Initialize Function (AKA Push the Dominos) **/
 function init(){
@@ -36,6 +36,7 @@ function locateMe(){
 /** Get Brewery by Location - Marcos **/
     
 function getBreweryByLocation(lat , long){
+    breweryCard.addClass('loading');
     var searchSize = 50;
     let apiUrl = `https://api.openbrewerydb.org/breweries?by_dist=${lat},${long}&per_page=${searchSize}`;
 
@@ -53,6 +54,53 @@ function getBreweryByLocation(lat , long){
             console.log("no breweries found at this location");
         }
     });
+}
+
+function pickRandom(breweryList){
+    let listSize = Object.keys(breweryList).length;
+    let chosenBrewery = breweryList[Math.floor(Math.random() * listSize) - 1];
+    displayBrewery(chosenBrewery);
+}
+
+function displayBrewery(brewery){
+    /**DEBUG**/ console.log(brewery);
+
+    breweryCard.removeClass('loading');
+    var contentblock = breweryCard.find('div.cardcontent');
+    contentblock.attr( "id", brewery.id );
+
+    // Create an object to append to the HTML
+    var displayHTML = `<h2 class="brewery-name">${brewery.name}</h2><p class="brewery-address">`;
+
+    // Construct the address
+    if(brewery.street != "" && brewery.street != null && brewery.street != "null"){
+        displayHTML += `${brewery.street}, `;
+    }
+    if(brewery.city != "" && brewery.city != null && brewery.city != "null"){
+        displayHTML += `${brewery.city}, `;
+    }
+    if(brewery.state != "" && brewery.state != null && brewery.state != "null"){
+        displayHTML += `${brewery.state}, `;
+    }
+    if(brewery.county_province != "" && brewery.county_province != null && brewery.county_province != "null"){
+        displayHTML += `${brewery.county_province}, `;
+    }
+    if(brewery.postal_code != "" && brewery.postal_code != null && brewery.postal_code != "null"){
+        displayHTML += `${brewery.postal_code}, `;
+    }
+    displayHTML += `</p>`;
+
+    // Check for website info
+    if(brewery.website_url != "" && brewery.website_url != null && brewery.website_url != "null"){
+        displayHTML += `<p class="brewery-website"><a href="${brewery.website_url}" target="_blank">Visit the website</a></p>`;
+    }
+
+    // Append to the block
+    contentblock.html(displayHTML);
+
+    // TODO: pass Lat & Long to map maker
+    // mapMaker( brewery.latitude, brewery.longitude );
+
 }
 
 

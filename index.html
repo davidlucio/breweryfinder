@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-            crossorigin=""/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+
+        <script src="https://kit.fontawesome.com/3dafd30171.js" crossorigin="anonymous"></script>
 
         <title>Brewery Finder</title>
     </head>
@@ -23,7 +23,7 @@
 
         <main>
 
-            <div class="box">
+            <section class="box">
                 <input class="input is-rounded" type="text" placeholder="Search">
                 <div class="select is-rounded">
                     <select>
@@ -41,31 +41,29 @@
                     </select>
                 </div>
                 <button class="button is-rounded">Submit</button>
-
-              
-            </div>
+            </section>
           
-            <div id="breweryMap"></div>
+            
 
-          <section id=brewerycard class="loading">
-              <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
-          </section>
-
-          <section id=bookmark-card></section>
+            <section id=brewerycard class="card-body loading">
+                <span id=bookmark class="far fa-bookmark"></span>
+                <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
+                <div class="cardcontent"></div>
+                <div id="brewerymap"></div>
+            </section>
+                        
+            <section id=bookmarkcard></section>
         </main>
       
         <footer class="footer">
           <div class="content has-text-centered">
-            <p>
-              <strong>Brewery Finder</strong> by <a href="https://github.com/davidlucio/breweryfinder">Brewery Boys</a>.
-            </p>
+            <p>&copy; <a href="https://github.com/davidlucio/breweryfinder">Brewery Boys</a>, 2021</p>
           </div>
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         <script src="./assets/js/script.js"></script>
-        <script src="./assets/js/randomizer.js"></script>
         
     </body>
 </html>
