@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet" href="./assets/css/displaybookmark.css">
-        <link rel="stylesheet" href= "assets/css/mapfunctionality.css" <!-- DELETE LATER -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 
         <script src="https://kit.fontawesome.com/3dafd30171.js" crossorigin="anonymous"></script>
@@ -25,28 +23,6 @@
 
         <main>
 
-            <section class="box">
-                <input class="input is-rounded" type="text" placeholder="Search">
-                <div class="select is-rounded">
-                    <select>
-                      <option>Filter</option>
-                      <option>Mirco</option>
-                      <option>Nano</option>
-                      <option>Regional</option>
-                      <option>Brewpub</option>
-                      <option>Large</option>
-                      <option>Planning</option>
-                      <option>Bar</option>
-                      <option>Contract</option>
-                      <option>Proprietor</option>
-                      <option>Closed</option>
-                    </select>
-                </div>
-                <button class="button is-rounded">Submit</button>
-            </section>
-          
-            
-
             <section id=brewerycard class="card-body loading">
                 <span id=bookmark class="far fa-bookmark"></span>
                 <p class="loading-icon"><span class="fa fa-spinner fa-spin"></span></p>
@@ -54,6 +30,10 @@
                 <div id="brewerymap"></div>
             </section>
                         
+            <section class="box">
+                <button class="button is-rounded" id="shuffle">Shuffle?</button>
+            </section>
+
             <section id=bookmarkcard></section>
         </main>
       
@@ -66,8 +46,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         <script src="./assets/js/script.js"></script>
-        <script src="./assets/js/displaybookmark.js"></script> <!-- DELETE LATER -->
-        <script src="assets/js/mapfunctionality.js"></script>
-        
     </body>
 </html>

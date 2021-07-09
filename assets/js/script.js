@@ -4,11 +4,19 @@ var breweryCard = $('#brewerycard'),
 
 /** Page Initialize Function (AKA Push the Dominos) **/
 function init(){
-
     getBookmark();
-    locateMe();
-    
+    locateMe();   
 }
+
+$('#bookmark').click(function(){
+    var currentID = $(this).siblings('.cardcontent').attr('id');
+    addBookmark(currentID);
+});
+
+// Quick Fix for Shuffling!
+$('#shuffle').click(function(){
+    locateMe();
+});
 
 /** Geolocator - Lucio **/
 
@@ -110,6 +118,35 @@ function displayBrewery(brewery, method){
 }
 
 
+// function for setting marker to lat/long of brewery -- Connor
+function getBreweryLatLong() {
+    marker.setLatLng([brewery.latitude, brewery.longitude])
+}
+
+function mapMaker(latitude, longitude) {
+    console.log('debug')
+    var container = L.DomUtil.get('brewerymap');
+      if(container != null){
+        container._leaflet_id = null;
+      }
+    // variable for map and setting the default starting viewpoint with ([lat, long], <zoom level>)
+    let mymap = L.map('brewerymap').setView([latitude, longitude], 13);
+
+    // tiles
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiY29ubm9yb2xzb24iLCJhIjoiY2txdWU0MXh1MDNvdjJwczhrcG52ZGczOCJ9.ZEcgEWRYjQf5ouKmt98pBg'
+    }).addTo(mymap);
+    
+    // variable for marker and adding marker to map with [lat, long]
+    let marker = L.marker([latitude, longitude]).addTo(mymap);
+}
+
+
 /** Manage Bookmark Locale Storage - Connor **/
 
 function addBookmark(currentBreweryId){
@@ -132,7 +169,24 @@ function getBookmark(){
     }
 }
 
+function fetchBookmarkData(bookmarkid){
+    var specificBreweryURL = `https://api.openbrewerydb.org/breweries/${bookmarkid}`;
+    fetch (specificBreweryURL)
+    .then(function (response){
+        if (response.status === 200){
+            response.json().then(function (data){
+                displayBrewery(data, "bookmark");
+            })
+        }
+        else if (response.status !==200){
+            console.log (`there was an error: ${response.status}`);
+        }
+        else {
+            console.log("The bookmark could not find a brewery with that ID");
+        }
+    });
+}
+
 // LET'S GOOOOOOOOOOOOOOOOOOOO!
 // (Warning: Only turn this on when we're active, otherwise we will waste our pings)
-
-// init();
+init();
