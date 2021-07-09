@@ -1,0 +1,33 @@
+#bookmark:hover {
+    cursor: pointer;
+    font-weight:900;
+}
+
+#bookmarkcard {
+    border: 3px solid var(--darkbrown);
+    display: none;
+    position:relative;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 0px black;
+    background: var(--dullbrown);
+    color: black;
+    font-size: 80%;
+    padding: 10px 10px 10px 80px;
+}
+
+#bookmarkcard h2,
+#bookmarkcard p{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+#bookmarkcard::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f02e";
+    font-weight: 900;
+    font-size: 50px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    color: white;
+}
