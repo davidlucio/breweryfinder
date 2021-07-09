@@ -48,10 +48,10 @@ function getBreweryByLocation(lat , long){
             })
         }
         else if (response.status !==200){
-        console.log (`there was an error: ${response.status}`);
+        console.log (`ERROR: ${response.status}`);
         }
         else {
-            console.log("no breweries found at this location");
+            console.log("ERROR: No breweries found at this location");
         }
     });
 }
@@ -59,15 +59,19 @@ function getBreweryByLocation(lat , long){
 function pickRandom(breweryList){
     let listSize = Object.keys(breweryList).length;
     let chosenBrewery = breweryList[Math.floor(Math.random() * listSize) - 1];
-    displayBrewery(chosenBrewery);
+    displayBrewery(chosenBrewery, "primary");
 }
 
-function displayBrewery(brewery){
-    /**DEBUG**/ console.log(brewery);
-
-    breweryCard.removeClass('loading');
-    var contentblock = breweryCard.find('div.cardcontent');
-    contentblock.attr( "id", brewery.id );
+function displayBrewery(brewery, method){
+    
+    if(method === "primary"){
+        breweryCard.removeClass('loading');
+        var contentblock = breweryCard.find('div.cardcontent');
+        contentblock.attr( "id", brewery.id );
+    }
+    else if(method === "bookmark"){
+        var contentblock = bookmarkCard;
+    }
 
     // Create an object to append to the HTML
     var displayHTML = `<h2 class="brewery-name">${brewery.name}</h2><p class="brewery-address">`;
@@ -86,7 +90,7 @@ function displayBrewery(brewery){
         displayHTML += `${brewery.county_province}, `;
     }
     if(brewery.postal_code != "" && brewery.postal_code != null && brewery.postal_code != "null"){
-        displayHTML += `${brewery.postal_code}, `;
+        displayHTML += `${brewery.postal_code}`;
     }
     displayHTML += `</p>`;
 
@@ -99,7 +103,9 @@ function displayBrewery(brewery){
     contentblock.html(displayHTML);
 
     // TODO: pass Lat & Long to map maker
-    // mapMaker( brewery.latitude, brewery.longitude );
+    if(method === "primary"){
+        // mapMaker( brewery.latitude, brewery.longitude );
+    }
 
 }
 
@@ -107,16 +113,19 @@ function displayBrewery(brewery){
 /** Manage Bookmark Locale Storage - Connor **/
 
 function addBookmark(currentBreweryId){
-    localStorage.setItem('breweryBookmark', currentBreweryId);
-    console.log(`breweryBookmark set to ${currentBreweryId}`);
-    // TODO: Populate bookmark area
+    var existingBookmark = localStorage.getItem('breweryBookmark');
+
+    if ( existingBookmark !== null && existingBookmark != currentBreweryId ) {
+        localStorage.setItem('breweryBookmark', currentBreweryId);
+        getBookmark();
+    }
 }
 
 function getBookmark(){
     var breweryBookmark = localStorage.getItem('breweryBookmark');
     if ( breweryBookmark !== null) {
-        // TODO: populate bookmark area
-        console.log(breweryBookmark);
+        bookmarkCard.css('display','block');
+        fetchBookmarkData(breweryBookmark);
     }
     else {
         // do nothing
