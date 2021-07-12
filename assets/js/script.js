@@ -75,6 +75,7 @@ function displayBrewery(brewery, method){
     if(method === "primary"){
         breweryCard.removeClass('loading');
         var contentblock = breweryCard.find('div.cardcontent');
+        console.log(contentblock); // DEBUG - Could not reproduce
         contentblock.attr( "id", brewery.id );
     }
     else if(method === "bookmark"){

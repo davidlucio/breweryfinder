@@ -16,8 +16,9 @@ body{
 
 h1{
     font-size: 250%;
-    color: var(--darkblue);
+    color: var(--dullblue);
     margin: 0px;
+    font-weight:800;
 }
 
 h2{
@@ -26,6 +27,7 @@ h2{
     margin: 0px 0px 20px 0px;
     width: 100%;
     padding-right: 50px;
+    color: var(--darkbrown);
 }
 
 h3{
@@ -37,7 +39,7 @@ h3{
 header{
     text-align: center;
     font-size: large;
-    background-color: var(--dullblue);
+    background-color: var(--darkblue);
     padding: 10px;
 }
 
@@ -79,7 +81,7 @@ section p{
 }
 
 section p a{
-    color: white;
+    color: var(--darkblue);
     text-decoration: none;
     font-weight: 400;
 }
@@ -169,6 +171,15 @@ section p a{
 
 button#shuffle{
     width: 100%;
+    color: var(--dullbrown);
+    background: var(--darkblue);
+    font-weight: 700;
+}
+
+button#shuffle:focus,
+button#shuffle:hover{
+    color: var(--dullblue);
+    background: var(--darkbrown);
 }
 
 @media screen and (max-width: 720px) {
